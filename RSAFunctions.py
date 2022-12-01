@@ -1,3 +1,5 @@
+import math
+
 """Gets user input for prime numbers p and q
 
 Assumes the user will enter prime numbers and doesn't check
@@ -5,8 +7,8 @@ Assumes the user will enter prime numbers and doesn't check
 returns: a list of the users two entered values [p, q]
 """
 def get_primes():
-    p = input('p value: ')
-    q = input('q value: ')
+    p = int(input('p value: '))
+    q = int(input('q value: '))
 
     return [p, q]
 
@@ -23,3 +25,12 @@ def calculate_N(primes):
 
 def calculate_phi(primes):
     return (primes[0] - 1) * (primes[1] - 1)
+
+def get_e(phi):
+    e = int(input('Enter a value for e: '))
+
+    while math.gcd(phi, e) != 1:
+        print('e and phi are not co-prime')
+        e = int(input('Enter a value for e: '))
+    
+    return e
