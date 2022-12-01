@@ -14,10 +14,12 @@ def get_primes():
 """Calculates the public key N value
 
 Arguments:
-    list - the list containing p and q
+    primes - the list containing p and q
 
 returns: N value equal to q * p
 """
-def calculate_N(list):
-    return list[0] * list[1]
+def calculate_N(primes):
+    return primes[0] * primes[1]
 
+def calculate_phi(primes):
+    return (primes[0] - 1) * (primes[1] - 1)
